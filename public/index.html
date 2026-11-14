@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://getressac.app/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/assets/fonts/FunnelDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
-<script>try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}</script>
+<script>try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;const a=localStorage.getItem("aura");if(/^(lagon|verger|glacier|braise)$/.test(a))document.documentElement.dataset.aura=a}catch{}</script>
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js" defer></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -41,6 +41,7 @@
         <button class="btn" type="submit">Request an invite</button>
       </form>
       <p class="tag">Closed beta · macOS 14+ · Apple Silicon · open source</p>
+      <div class="auras" role="group" aria-label="Aura"><span>Aura</span><button type="button" data-aura="aube" aria-label="Aube" title="Aube" aria-pressed="true" style="background:linear-gradient(135deg,#FF9F7A,#FF6F91 50%,#FFD36E)"></button><button type="button" data-aura="lagon" aria-label="Lagon" title="Lagon" aria-pressed="false" style="background:linear-gradient(135deg,#4FD1C5,#3B8BEB 50%,#B7F0D8)"></button><button type="button" data-aura="verger" aria-label="Verger" title="Verger" aria-pressed="false" style="background:linear-gradient(135deg,#A3D977,#2F9E6E 50%,#F2E27D)"></button><button type="button" data-aura="glacier" aria-label="Glacier" title="Glacier" aria-pressed="false" style="background:linear-gradient(135deg,#9CC3FF,#7FE0F0 50%,#E8D9FF)"></button><button type="button" data-aura="braise" aria-label="Braise" title="Braise" aria-pressed="false" style="background:linear-gradient(135deg,#FF7A45,#E8384F 50%,#FFB86B)"></button></div>
     </main>
   </div>
 </div>

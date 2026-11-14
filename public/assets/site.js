@@ -24,3 +24,17 @@ for (const button of document.querySelectorAll('.theme')) {
     try { localStorage.setItem('theme', root.dataset.theme); } catch {}
   });
 }
+
+// Aura picker: the same five auras as the app; Aube is the default (no data-aura).
+const auraButtons = document.querySelectorAll('.auras button');
+const pressAura = (id) => auraButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.aura === id)));
+pressAura(document.documentElement.dataset.aura || 'aube');
+for (const button of auraButtons) {
+  button.addEventListener('click', () => {
+    const id = button.dataset.aura;
+    if (id === 'aube') delete document.documentElement.dataset.aura;
+    else document.documentElement.dataset.aura = id;
+    pressAura(id);
+    try { localStorage.setItem('aura', id); } catch {}
+  });
+}
