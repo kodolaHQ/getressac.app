@@ -1,0 +1,8 @@
+name = "getressac"
+pages_build_output_dir = "public"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ressac-invites"
+database_id = "TO_FILL_TASK_5"
