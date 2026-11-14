@@ -5,4 +5,4 @@ compatibility_date = "2026-11-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "ressac-invites"
-database_id = "TO_FILL_TASK_5"
+database_id = "c894bb70-bbc7-4088-aee8-a137c72dbc48"
