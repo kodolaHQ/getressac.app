@@ -82,7 +82,11 @@ export async function handleInvite({ request, env, fetchImpl = fetch, now = new 
   const parsed = parseInvite(form);
   if (!parsed.ok) return errorPage(lang, 400);
 
-  await saveInvite(env.DB, parsed.invite, now);
+  try {
+    await saveInvite(env.DB, parsed.invite, now);
+  } catch {
+    return errorPage(lang, 503);
+  }
   const location = parsed.invite.lang === 'fr' ? '/fr/merci.html' : '/thanks.html';
   return new Response(null, { status: 303, headers: { Location: location } });
 }

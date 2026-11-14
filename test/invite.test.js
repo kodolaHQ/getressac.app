@@ -151,3 +151,14 @@ test('verifyTurnstile posts secret, response and remoteip to siteverify', async 
   assert.equal(seen.body.get('response'), 'tok');
   assert.equal(seen.body.get('remoteip'), '1.2.3.4');
 });
+
+test('a database error gives a readable 503, not a raw 500', async () => {
+  const db = { prepare: () => ({ bind: () => ({ run: async () => { throw new Error('D1 down'); } }) }) };
+  const res = await handleInvite({
+    request: post({ ...full, 'cf-turnstile-response': 't' }),
+    env: { DB: db, TURNSTILE_SECRET: 's' },
+    fetchImpl: fetchOk(true),
+  });
+  assert.equal(res.status, 503);
+  assert.match(await res.text(), /href="\/fr\/#invite"/);
+});
