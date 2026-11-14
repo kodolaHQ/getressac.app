@@ -169,3 +169,22 @@ test('a database error gives a readable 503, not a raw 500', async () => {
   assert.equal(res.status, 503);
   assert.match(await res.text(), /href="\/fr\/#invite"/);
 });
+
+test('notifies with the saved invite, and a failed mail still redirects', async () => {
+  for (const fails of [false, true]) {
+    const sent = [];
+    const waited = [];
+    const NOTIFY = { fetch: async (_url, init) => { sent.push(JSON.parse(init.body)); if (fails) throw new Error('mail down'); } };
+    const res = await handleInvite({
+      request: post({ ...full, 'cf-turnstile-response': 'tok' }),
+      env: { DB: fakeDb(), TURNSTILE_SECRET: 'secret', NOTIFY },
+      waitUntil: (p) => waited.push(p),
+      fetchImpl: fetchOk(true),
+      now: '2026-11-14T10:00:00.000Z',
+    });
+    await Promise.all(waited);
+    assert.equal(res.status, 303);
+    assert.equal(sent[0].email, 'a@b.co');
+    assert.equal(sent[0].hope, 'tabs');
+  }
+});

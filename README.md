@@ -29,6 +29,7 @@ npx wrangler d1 create ressac-invites --jurisdiction eu   # put the id in wrangl
 npx wrangler d1 migrations apply ressac-invites --remote
 npx wrangler pages project create getressac --production-branch main
 npx wrangler pages secret put TURNSTILE_SECRET --project-name getressac
+(cd workers/notify && npx wrangler secret put NOTIFY_TO && npx wrangler deploy)  # mail per invite; NOTIFY_TO must be a verified Email Routing destination
 npx wrangler pages deploy public --branch preview         # a preview URL
 npx wrangler pages deploy public --branch main            # production
 ```

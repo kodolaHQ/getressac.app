@@ -6,3 +6,8 @@ compatibility_date = "2026-11-01"
 binding = "DB"
 database_name = "ressac-invites"
 database_id = "c894bb70-bbc7-4088-aee8-a137c72dbc48"
+
+# Mail notification for each invite (workers/notify, deployed on its own).
+[[services]]
+binding = "NOTIFY"
+service = "getressac-notify"

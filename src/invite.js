@@ -62,7 +62,7 @@ function errorPage(lang, status) {
   return new Response(html, { status, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
 }
 
-export async function handleInvite({ request, env, fetchImpl = fetch, now = new Date().toISOString() }) {
+export async function handleInvite({ request, env, waitUntil = () => {}, fetchImpl = fetch, now = new Date().toISOString() }) {
   const type = request.headers.get('Content-Type') ?? '';
   if (!type.startsWith('multipart/form-data') && !type.startsWith('application/x-www-form-urlencoded')) {
     return errorPage('en', 400);
@@ -86,6 +86,10 @@ export async function handleInvite({ request, env, fetchImpl = fetch, now = new 
     await saveInvite(env.DB, parsed.invite, now);
   } catch {
     return errorPage(lang, 503);
+  }
+  // The invite is saved: a failed notification mail must not fail the visitor's request.
+  if (env.NOTIFY) {
+    waitUntil(env.NOTIFY.fetch('https://notify/', { method: 'POST', body: JSON.stringify(parsed.invite) }).catch(() => {}));
   }
   const location = parsed.invite.lang === 'fr' ? '/fr/merci.html' : '/thanks.html';
   return new Response(null, { status: 303, headers: { Location: location } });
