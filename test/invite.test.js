@@ -56,8 +56,15 @@ test('parseInvite rejects bad email', () => {
   }
 });
 
+test('parseInvite accepts each browser origin', () => {
+  for (const origin of ['arc', 'zen', 'chrome', 'firefox', 'other']) {
+    assert.equal(parseInvite(form({ ...full, origin })).invite?.origin, origin, origin);
+  }
+});
+
 test('parseInvite rejects unknown origin', () => {
-  assert.deepEqual(parseInvite(form({ ...full, origin: 'chrome' })), { ok: false, error: 'origin' });
+  assert.deepEqual(parseInvite(form({ ...full, origin: 'ai' })), { ok: false, error: 'origin' });
+  assert.deepEqual(parseInvite(form({ ...full, origin: 'netscape' })), { ok: false, error: 'origin' });
   const { origin, ...noOrigin } = full;
   assert.deepEqual(parseInvite(form(noOrigin)), { ok: false, error: 'origin' });
 });
@@ -69,8 +76,8 @@ test('parseInvite rejects out-of-list chip, memory, lang and long hope', () => {
 });
 
 test('parseInvite turns empty optionals into null and defaults lang to en', () => {
-  const r = parseInvite(form({ email: 'a@b.co', origin: 'ai', chip: '', memory: '', hope: '  ' }));
-  assert.deepEqual(r.invite, { email: 'a@b.co', origin: 'ai', chip: null, memory: null, hope: null, lang: 'en' });
+  const r = parseInvite(form({ email: 'a@b.co', origin: 'zen', chip: '', memory: '', hope: '  ' }));
+  assert.deepEqual(r.invite, { email: 'a@b.co', origin: 'zen', chip: null, memory: null, hope: null, lang: 'en' });
 });
 
 test('parseInvite ignores extra fields', () => {
@@ -115,7 +122,7 @@ test('survives siteverify network error', async () => {
 });
 
 test('rejects invalid form with 400', async () => {
-  const { res, db } = await run({ ...full, origin: 'chrome', 'cf-turnstile-response': 't' });
+  const { res, db } = await run({ ...full, origin: 'netscape', 'cf-turnstile-response': 't' });
   assert.equal(res.status, 400);
   assert.match(res.headers.get('Content-Type'), /text\/html/);
   assert.equal(db.calls.length, 0);

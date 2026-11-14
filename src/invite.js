@@ -1,4 +1,4 @@
-const ORIGINS = ['arc', 'ai', 'firefox', 'other'];
+const ORIGINS = ['arc', 'zen', 'chrome', 'firefox', 'other'];
 const CHIPS = ['m1', 'm2', 'm3', 'm4', 'm5'];
 const MEMORIES = [8, 16, 24, 32, 48, 64, 96, 128];
 const LANGS = ['en', 'fr'];

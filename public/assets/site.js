@@ -14,3 +14,13 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
     v.controls = true;
   }
 }
+
+// Theme toggle: flips the current look (system choice or saved one) and remembers it.
+for (const button of document.querySelectorAll('.theme')) {
+  button.addEventListener('click', () => {
+    const root = document.documentElement;
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+  });
+}
