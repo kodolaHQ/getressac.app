@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 36" fill="none">
+  <text x="4" y="22.5" fill="#52525B" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="600" letter-spacing="0.12em">FORGED BY</text>
+  <g transform="translate(84, 4) scale(0.235)">
+    <path d="M60 12 C61.7 22.3 62.7 23.3 73 25 C62.7 26.7 61.7 27.7 60 38 C58.3 27.7 57.3 26.7 47 25 C57.3 23.3 58.3 22.3 60 12 Z" fill="#E85D2A"/>
+    <path d="M13 49 H34 V64 C21 63 13 56 13 49 Z" fill="#111318"/>
+    <path d="M38 49 H79 V55 L61 73 L79 91 V97 H68 Q58 88 48 97 H35 V90 C45 85 45 69 38 65 Z" fill="#111318"/>
+    <path d="M85 50 L108 73 L85 96 V83.5 L95.5 73 L85 62.5 Z" fill="#111318"/>
+  </g>
+  <g transform="translate(119, 10.5) scale(0.52)" fill="#111318">
+    <path d="M0 0 H6 V13.5 L17.5 0 H25 L12 15 L25.5 32 H18 L7.5 18.5 L6 20.2 V32 H0 Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" transform="translate(31.5, 0)" d="M14 -0.5 A14 16.5 0 1 1 13.99 -0.5 Z M14 5.5 A8 10.5 0 1 1 13.99 5.5 Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" transform="translate(67, 0)" d="M0 0 H11 A15 16 0 0 1 11 32 H0 Z M6 6 V26 H11 A9 10 0 0 0 11 6 Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" transform="translate(100, 0)" d="M14 -0.5 A14 16.5 0 1 1 13.99 -0.5 Z M14 5.5 A8 10.5 0 1 1 13.99 5.5 Z"/>
+    <path transform="translate(135.5, 0)" d="M0 0 H6 V26 H20 V32 H0 Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" transform="translate(159, 0)" d="M10 0 H16 L26 32 H19.8 L17.5 24 H8.5 L6.2 32 H0 Z M13 6.5 L9.2 18.5 H16.8 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ressac — a browser that grows with you</title>
+<meta name="description" content="Ressac is a calm, minimal macOS browser built on Firefox. Switch on the AI when you need it to take on the hard stuff. Closed beta, open source.">
+<link rel="alternate" hreflang="en" href="https://getressac.app/">
+<link rel="alternate" hreflang="fr" href="https://getressac.app/fr/">
+<link rel="icon" href="/favicon.png">
+<meta property="og:title" content="Ressac — a browser that grows with you">
+<meta property="og:description" content="Calm and minimal out of the box. Switch on the AI when you need it to take on the hard stuff.">
+<meta property="og:image" content="https://getressac.app/og.png">
+<meta property="og:url" content="https://getressac.app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/FunnelDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <header class="top">
+      <a class="wordmark" href="/">Ressac</a>
+      <nav>
+        <a href="https://github.com/kodolaHQ/Ressac">GitHub</a>
+        <a href="/fr/" hreflang="fr" lang="fr">FR</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>A browser that grows with you.</h1>
+      <p class="lede">Calm and minimal out of the box. Switch on the AI when you need it to take on the hard stuff.</p>
+      <form class="quick" action="/#invite" method="get">
+        <input id="quick-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" aria-label="Email" required>
+        <button class="btn" type="submit">Request an invite</button>
+      </form>
+      <p class="tag">Closed beta · macOS 14+ · Apple Silicon · open source</p>
+    </main>
+  </div>
+</div>
+
+<div class="wrap">
+  <section aria-label="How Ressac grows with you">
+    <div class="step">
+      <div>
+        <span class="n">01 · Day one</span>
+        <h2>Just a calm browser.</h2>
+        <p>Firefox under the hood, a quiet sidebar, nothing to sign up for and nothing to switch on. Open it and browse.</p>
+      </div>
+      <div class="shot"><img src="/assets/img/command-bar.jpg" width="1440" height="900" loading="lazy" alt="Ressac showing a Wikipedia page, with the command bar open over it and the tab sidebar on the left."></div>
+    </div>
+
+    <div class="step">
+      <div>
+        <span class="n">02 · Your way</span>
+        <h2>Spaces, auras, shortcuts.</h2>
+        <p>Keep work and life in separate spaces, each with its own colour. Jump with ⌃Tab, find anything from the command bar, drive it all from the keyboard — vim keys included.</p>
+      </div>
+      <div class="shot"><img src="/assets/img/home.jpg" width="1440" height="900" loading="lazy" alt="Ressac's home page with widgets on a warm, softly blurred background."></div>
+    </div>
+
+    <div class="step">
+      <div>
+        <span class="n">03 · When you're ready</span>
+        <h2>Switch on the AI.</h2>
+        <p>An agent that browses with you in its own tab, researches, and builds what you need: site apps, extensions, widgets. Use your own Claude or ChatGPT account, or run local models.</p>
+      </div>
+      <div class="shot">
+        <video src="/assets/img/live-recap.mp4" poster="/assets/img/live-recap-poster.jpg" width="1200" height="750" autoplay muted loop playsinline preload="metadata" aria-label="The agent compares robot vacuums across several sites while a recap fills in live."></video>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="open-title">
+    <h2 id="open-title" class="section-title">Local and open.</h2>
+    <div class="cards">
+      <div class="card"><h3>No account</h3><p>Nothing to sign up for. Your browsing stays on your Mac.</p></div>
+      <div class="card"><h3>Your AI, your choice</h3><p>The AI is off until you switch it on. Bring your own account or keep everything local with Ollama.</p></div>
+      <div class="card"><h3>Open source</h3><p>Built on Firefox, published on GitHub under the MPL 2.0.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="need-title">
+    <h2 id="need-title" class="section-title">What you need.</h2>
+    <div class="cards">
+      <div class="card"><h3>To browse</h3><p>A Mac with Apple Silicon, on macOS 14 or later.</p></div>
+      <div class="card"><h3>For the agent</h3><p>Docker (OrbStack or Docker Desktop) and a Claude or ChatGPT account, or an API key.</p></div>
+      <div class="card"><h3>For local AI</h3><p>Ollama — Ressac can install it for you. More memory means bigger, better models.</p></div>
+    </div>
+  </section>
+
+  <section id="invite" aria-labelledby="invite-title">
+    <form class="invite" action="/api/invite" method="post">
+      <h2 id="invite-title">Request an invite.</h2>
+      <p class="muted">About 20 spots, hand-picked. We'll email you if you're in.</p>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" autocomplete="email" maxlength="254" required>
+      </div>
+
+      <fieldset>
+        <legend>Where are you coming from?</legend>
+        <div class="choices">
+          <label><input type="radio" name="origin" value="arc" required> Arc</label>
+          <label><input type="radio" name="origin" value="ai"> AI</label>
+          <label><input type="radio" name="origin" value="firefox"> Firefox</label>
+          <label><input type="radio" name="origin" value="other"> Something else</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="chip">Your Mac <span class="opt">(optional)</span></label>
+        <div class="pair">
+          <select id="chip" name="chip" aria-label="Chip">
+            <option value="">Chip — not sure</option>
+            <option value="m1">M1</option><option value="m2">M2</option><option value="m3">M3</option><option value="m4">M4</option><option value="m5">M5</option>
+          </select>
+          <select name="memory" aria-label="Memory">
+            <option value="">Memory — not sure</option>
+            <option value="8">8 GB</option><option value="16">16 GB</option><option value="24">24 GB</option><option value="32">32 GB</option>
+            <option value="48">48 GB</option><option value="64">64 GB</option><option value="96">96 GB</option><option value="128">128 GB or more</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="hope">What do you hope Ressac does for you? <span class="opt">(optional)</span></label>
+        <input id="hope" type="text" name="hope" maxlength="280">
+      </div>
+
+      <input type="hidden" name="lang" value="en">
+      <div class="cf-turnstile" data-sitekey="TO_FILL_TASK_5"></div>
+      <button class="btn" type="submit">Request an invite</button>
+      <p class="note">We only use your answers to pick and contact testers. <a href="/privacy.html">Privacy</a></p>
+    </form>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="made">
+      <span>Made in Bordeaux</span>
+      <picture>
+          <source srcset="/assets/kodola/forged-by-kodola-inline-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="/assets/kodola/forged-by-kodola-inline-light.svg" alt="Forged by Kodola" width="228" height="36">
+      </picture>
+    </div>
+    <nav>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/legal.html">Legal notice</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
