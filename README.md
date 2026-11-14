@@ -47,3 +47,5 @@ Never commit an export.
 ## License
 
 [MPL 2.0](LICENSE), like Ressac.
+
+Credits: the fonts [Geist](https://vercel.com/font) and [Funnel Display](https://fonts.google.com/specimen/Funnel+Display) (SIL Open Font License, texts in `public/assets/fonts/`); browser logos from [Simple Icons](https://simpleicons.org) (CC0), trademarks of their respective owners. The Kodola badge belongs to Kodola.
