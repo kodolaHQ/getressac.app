@@ -40,7 +40,7 @@
         <input id="quick-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" aria-label="Email" required>
         <button class="btn" type="submit">Request an invite</button>
       </form>
-      <p class="tag">Closed beta · macOS 14+ · Apple Silicon · open source</p>
+      <p class="tag">Closed beta · macOS 13.3+ · Apple Silicon · open source</p>
       <div class="auras" role="group" aria-label="Aura"><span>Aura</span><button type="button" data-aura="aube" aria-label="Aube" title="Aube" aria-pressed="true" style="background:linear-gradient(135deg,#FF9F7A,#FF6F91 50%,#FFD36E)"></button><button type="button" data-aura="lagon" aria-label="Lagon" title="Lagon" aria-pressed="false" style="background:linear-gradient(135deg,#4FD1C5,#3B8BEB 50%,#B7F0D8)"></button><button type="button" data-aura="verger" aria-label="Verger" title="Verger" aria-pressed="false" style="background:linear-gradient(135deg,#A3D977,#2F9E6E 50%,#F2E27D)"></button><button type="button" data-aura="glacier" aria-label="Glacier" title="Glacier" aria-pressed="false" style="background:linear-gradient(135deg,#9CC3FF,#7FE0F0 50%,#E8D9FF)"></button><button type="button" data-aura="braise" aria-label="Braise" title="Braise" aria-pressed="false" style="background:linear-gradient(135deg,#FF7A45,#E8384F 50%,#FFB86B)"></button></div>
     </main>
   </div>
@@ -61,7 +61,7 @@
       <div>
         <span class="n">02 · Your way</span>
         <h2>Spaces, auras, shortcuts.</h2>
-        <p>Keep work and life in separate spaces, each with its own colour. Jump with ⌃Tab, find anything from the command bar, drive it all from the keyboard — vim keys included.</p>
+        <p>Keep work and life in separate spaces, each with its own colour. Jump with ⌃Tab, find anything from the command bar, jump to any tab with ⌘E, drive it all from the keyboard — vim keys included. Pin your site apps to the sidebar, next to your essentials.</p>
       </div>
       <div class="shot"><img src="/assets/img/your-way-en.jpg" width="1440" height="900" loading="lazy" alt="Ressac's home page with a weather widget on a warm, softly blurred aura."></div>
     </div>
@@ -76,13 +76,24 @@
         <video src="/assets/img/agent-en.mp4" poster="/assets/img/agent-en-poster.jpg" width="1440" height="900" autoplay muted loop playsinline preload="metadata" aria-label="The agent compares the world's three biggest tidal bores in its own tab while a recap with a table and cards fills in live."></video>
       </div>
     </div>
+
+    <div class="step">
+      <div>
+        <span class="n">04 · Your data stays yours</span>
+        <h2>It uses your details. It never sees them.</h2>
+        <p>Ressac Passport holds your name, address, phone or IBAN. The agent reads labels in their place, and each value only goes to the sites you chose, after your OK. Click anything on a page to hide it from the agent, and see hatched what it can't see while it works. Your passwords sit behind Touch ID.</p>
+      </div>
+      <div class="shot">
+        <video src="/assets/img/passport.mp4" poster="/assets/img/passport-poster.jpg" width="1440" height="810" autoplay muted loop playsinline preload="metadata" aria-label="The passport, shown in the French app: the agent fills a form with your name, address and IBAN but only ever sees labels in their place."></video>
+      </div>
+    </div>
   </section>
 
   <section aria-labelledby="open-title">
     <h2 id="open-title" class="section-title">Local and open.</h2>
     <div class="cards">
       <div class="card"><h3>No account</h3><p>Nothing to sign up for. Your browsing stays on your Mac.</p></div>
-      <div class="card"><h3>Your AI, your choice</h3><p>The AI is off until you switch it on. Bring your own account or keep everything local with Ollama.</p></div>
+      <div class="card"><h3>Your AI, your choice</h3><p>The AI is off until you switch it on. Bring your own Claude or ChatGPT account. History search runs on small models on your Mac.</p></div>
       <div class="card"><h3>Open source</h3><p>Built on Firefox, published on GitHub under the MPL 2.0.</p></div>
     </div>
   </section>
@@ -90,9 +101,9 @@
   <section aria-labelledby="need-title">
     <h2 id="need-title" class="section-title">What you need.</h2>
     <div class="cards">
-      <div class="card"><h3>To browse</h3><p>A Mac with Apple Silicon, on macOS 14 or later.</p></div>
-      <div class="card"><h3>For the agent</h3><p>Docker (OrbStack or Docker Desktop) and a Claude or ChatGPT account, or an API key.</p></div>
-      <div class="card"><h3>For local AI</h3><p>Ollama — Ressac can install it for you. More memory means bigger, better models.</p></div>
+      <div class="card"><h3>To browse</h3><p>A Mac with Apple Silicon, on macOS 13.3 or later. 8 GB is enough: Ressac saves memory there.</p></div>
+      <div class="card"><h3>For the agent</h3><p>A Claude or ChatGPT account, or an API key. Nothing else to install: Ressac downloads the agent's small sandboxed machine (about 500 MB) at first use.</p></div>
+      <div class="card"><h3>For local AI</h3><p>Nothing to install. When you switch AI on, Ressac downloads its two small models once (about 1.4 GB).</p></div>
     </div>
   </section>
 
